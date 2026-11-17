@@ -1,4 +1,5 @@
 #@markdown aux plot funcs
+from .tools import *
 
 def aux_plot_popsizes(trj):
     fig, ax = plt.subplots(figsize=(7,3))
