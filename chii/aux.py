@@ -1,4 +1,5 @@
-#@markdown aux plot funcs
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 from .tools import *
 from .tools import get_c_p_m_star2
 
