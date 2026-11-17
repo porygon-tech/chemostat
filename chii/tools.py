@@ -954,23 +954,6 @@ def merge_pops(ps1, ps2):
     merged['S'] = ps1['S'] + ps2['S']
     return merged
 
-def aux_plot_popsizes(trj):
-    fig, ax = plt.subplots(figsize=(7,3))
-    A = np.asarray(trj['m']).squeeze(-1)
-    if A.ndim == 1:
-        ax.plot(trj['t'], A, label=rf"$m_1$")
-    else:
-        for j in range(A.shape[1]):
-            ax.plot(trj['t'], A[:, j], label=rf"$m_{j+1}$")
-    # ax.legend()
-    ax.set_yscale('log')
-    # ax.hlines(1, 0, final_time, linestyles='--', colors='red')
-    # ax.set_ylim(0,0.001)
-    fig.subplots_adjust(right=0.6)
-    ax.set_xlabel("time (minutes)")
-    ax.set_ylabel("population density")
-    plt.show()
-
 def integrate_system_euler(X0, Y0, m0, P0, R0,
                            D, U, T, L, Fn, Ft, Phi, psi,
                            t_span, t_eval=None, optAlloc=False, *, dt):
